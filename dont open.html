@@ -1,0 +1,382 @@
+<!--
+
+Inspired in https://code.sololearn.com/WC8STo4FLIB6/?ref=app
+
+Inspirado en https://code.sololearn.com/WC8STo4FLIB6/?ref=app
+
+--><!doctype html>
+<html> 
+ <head> 
+  <title>Page Title</title> 
+ <style type="text/css" id="dcoder_stylesheet">@import url('https://fonts.cdnfonts.com/css/grand-hotel');
+body {
+    background:rgb(28,42,55);
+}
+#menu
+{
+    
+}
+#console
+{
+    background:rgb(70,80,90);
+    width:250px;
+    height:150px;
+    border-radius:5px;
+    left:50%;
+    transform:translate(-50%);
+    position:absolute;
+    top:25%;
+    
+}
+#head
+{
+
+    height:20px;
+    background:rgba(255,255,255,0.1);
+    display:flex;
+}
+#head>*
+{
+    width:100%;
+}
+#logo
+{
+    text-align:right;
+    margin-right:5px;
+    color:white;
+    font-family:"Grand Hotel";
+    line-height:25px;
+}
+#body{
+    padding:10px;
+    color:white;
+    font-family:monospace;
+    font-size:100%;
+    display:none;
+}
+#to-click
+{
+    padding:10px;
+    color:white;
+    font-family:monospace;
+    font-size:100%;
+}
+input
+{
+    background:none;
+    border:none;
+    outline:none;
+    color:white;
+}
+input::placeholder
+{
+    color:rgb(150,150,150);
+    font-family:monospace;
+}
+.bl
+{
+    width:10px;
+    height:10px;
+    border-radius:10px;
+    margin-top:5px;
+    margin-left:2.5px;
+    display:inline-block;
+}
+.r{
+    background-color:rgb(250,84,84);
+}
+.g{
+    background-color:rgb(84,200,84);
+}
+.b{
+    background-color:rgb(104,104,250);
+}
+#cr, #cr2
+{
+    display:inline;
+    opacity:0;
+}
+h1
+{
+    font-size:20vw;
+    font-family:apple-system;
+}
+#hack
+{
+    padding:10%;
+    background:#1899ff;
+    width:80%;
+    height:100%;
+    top:0px;
+    left:0px;
+    position:fixed;
+    z-index:100;
+    color:white;
+    display:none;
+}
+p
+{
+    
+}
+#thack
+{
+    font-family:monospace;
+}</style></head> 
+ <body> 
+  <div id="hack"> <span id="thack"> <h1>:)</h1> <p id="nt">HAS SIDO HACKEADO HACKEADO HACKEADO HACKEADO HACKEADO HACKEADO HACKEADO HACKEADO HACKEADO HACKEADO HACKEADO HACKEADO HACKEADO HACKEADO HACKEADO HACKEADO HACKEADO HACKEADO HACKEADO HACKEADO HACKEADO HACKEADO HACKEADO HACKEADO HACKEADO HACKEADO HACKEADO HACKEADO HACKEADO HACKEADO HACKEADO HACKEADO HACKEADO HACKEADO HACKEADO HACKEADO HACKEADO HACKEADO HACKEADO HACKEADO HACKEADO HACKEADO HACKEADO HACKEADO HACKEADO HACKEADO HACKEADO HACKEADO... </p> </span> <span id="cr2">_</span> 
+  </div> 
+  <div id="cont"> 
+   <div id="console"> 
+    <div id="head"> 
+     <div id="bls"> 
+      <div class="bl r"></div> 
+      <div class="bl g"></div> 
+      <div class="bl b"></div> 
+     </div> 
+     <div id="logo">
+       H 
+     </div> 
+    </div> 
+    <form id="to-click" onsubmit="return callmain()"> 
+     <div id="sp">
+       &lt;&lt;&lt; Escriba la contraseña: 
+     </div> <label>&gt;&gt;&gt;</label> 
+     <input type="password" placeholder="5021" id="inp"> 
+    </form> 
+    <div id="body"> <span>&gt;&gt;&gt;</span> <span id="text"></span><span id="cr">_</span> 
+    </div> 
+   </div> 
+  </div> 
+  <script>
+        var hack = document.getElementById("hack")
+        
+        function sleep(ms)
+        {
+            return new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                    resolve()
+                },ms)
+            })
+        }
+        lang = prompt("What language do you speak?\nQue idioma hablas? \nEnglish (en) / Español (es)") || "en"
+        lang = lang.toLowerCase()
+        if(lang=="en")
+        {
+          alert("This website contains strong and flashing lights, proceed at your own risk. \n \n⚠️If you suffer from epilepsy or photosensitive epilepsy, you should NOT proceed.⚠️")
+           document.getElementById("nt").innerHTML ="YOU HAVE BEEN HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED EADO HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED..."
+            document.getElementById("sp").innerHTML ="<<< Enter the password:"
+        }
+        else
+        {
+            alert("Esta página web contiene luces fuertes y parpadeantes, continue bajo su propio riesgo. \n \n⚠️Si usted padece de epilepsia o epilepsia fotosensible NO debe proceder.⚠️")
+        }
+        
+        
+        
+        var cr=document.getElementById("cr")
+        var terminal = document.getElementById("text")
+            function clear()
+            {
+            
+                var txt = terminal.innerHTML
+                var c = txt.length-1
+                var inner=""
+                return new Promise((resolve,reject)=>{
+                var t = setInterval(()=>{
+                cr.style.opacity="1"
+                    for(var i = 0; i < c; i++)
+                    {
+                        inner+= txt[i]
+                        
+                    }
+                    terminal.innerHTML=inner
+                    inner=""
+                    c-=1
+                    if(c==-1)
+                    {
+                        clearInterval(t)
+                        setTimeout(resolve,1000)
+                    }
+                },70)
+            })
+            }
+            function write(txt,ct=0,terminalh = false)
+            {
+            if(!terminalh)
+            {
+                terminalh=terminal
+            }
+                var c=0
+                return new Promise((resolve,reject)=>{
+                    var t = setInterval(()=>{
+                    cr.style.opacity="1"
+
+ terminalh.innerHTML+=txt[c]
+                        //console.log(c)
+                        if(c==txt.length-1)
+                        {
+                            clearInterval(t)
+                           if(ct==0){
+                    setTimeout(resolve,1000)
+                            }
+                            else
+                            {
+                                
+                    setTimeout(resolve,10)
+                            
+                            }
+                            
+                        }
+                        c+=1
+                        
+                        
+                            
+                        
+                        
+                    },100)
+                })
+            }
+            async function main_es()
+            {
+                await write(" ")
+                await write(" ")
+                await write("Hola ¿Como estas? espero que bien.")
+                await clear()
+                await write("Soy un hacker y uno real!")
+                await clear()
+                await write("Para demostrártelo borraré todos tus archivos!")
+                await clear()
+                await write("¿Preparado para la cuenta regresiva?")
+                await clear()
+                await write("Ha ha ha! 5... 4... 3... 2... 1...", 34)           
+                
+                
+                hack.style.display="block"
+                hack.style.background="black"
+                hack.style.color="black"
+                await sleep(2500)
+                window.navigator.vibrate(8000,10000)
+                
+                console.error("HAS SIDO HACKEADO!") 
+                hack.style.background="#1899ff"
+                hack.style.color="white"
+                await sleep(2500)
+                 hack.style.color="transparent"
+                for(var i = 0; i < 50; i++){
+                    
+                    
+                    hack.style.background="white"
+                    await sleep(50)
+                    hack.style.background="black"
+                    await sleep(50)
+                }
+                await sleep(3000)
+                hack.style.color="rgb(0,225,0)"
+                
+                //hack.style.lineHeight="100vh"
+                var thack = document.getElementById("thack")
+                cr=document.getElementById("cr2")
+                
+                thack.innerHTML =""
+                await write(" ",0,thack)
+                await write(" ",0,thack)
+                await write("Gracias por ver mi código, si te gustó deja un voto a favor y un comentario!",0,thack)
+                await write(" Fin.",0,thack)
+            }
+             async function main_en()
+            {
+                await write(" ")
+                await write(" ")
+                await write("Hello, how are you? I hope you're well.")
+                await clear()
+                await write("I'm a hacker and a real one!")
+                await clear()
+                await write("To prove it to you I will delete all your files!")
+                await clear()
+                await write("Ready for the countdown?")
+                await clear()
+                await write("Ha ha ha! 5... 4... 3... 2... 1...", 34)
+                hack.style.display="block"
+                
+                hack.style.display="block"
+                hack.style.background="black"
+                hack.style.color="black"
+                
+                await sleep(2500)
+                window.navigator.vibrate(8000,10000)
+                console.error("YOU HAVE BEEN HACKED") 
+                hack.style.background="#1899ff"
+                hack.style.color="white"
+                await sleep(2500)
+                hack.style.color="transparent"
+                for(var i = 0; i < 50; i++){
+                    
+                    
+                    hack.style.background="white"
+                    await sleep(50)
+                    hack.style.background="black"
+                    await sleep(50)
+                }
+                await sleep(3000)
+                hack.style.color="rgb(0,225,0)"
+                
+                //hack.style.lineHeight="100vh"
+                var thack = document.getElementById("thack")
+                cr=document.getElementById("cr2")
+                
+                thack.innerHTML =""
+                await write(" ",0,thack)
+                await write(" ",0,thack)
+                await write("Thanks for looking at my code, if you liked it leave an upvote and a comment!",0,thack)
+                await write(" The end.",0,thack)
+            }
+            var f = false
+
+            setInterval(()=>{
+                f=!f
+                //console.log(f)
+                if(f)
+                {
+                    cr.style.opacity="0"
+                    
+                }
+                else
+                {
+                    cr.style.opacity="1"
+                }
+            },300)
+            
+            function callmain()
+            {
+                var pass = document.getElementById("inp")
+                //console.log(pass)
+                if(pass.value==5021)
+                {
+                
+                var form = document.getElementById("to-click")
+                form.style.display="none"
+                var sk = document.getElementById("body")
+                sk.style.display="block"
+                if(lang == "es")
+                {
+                    main_es()
+                }
+                else
+                {
+                    main_en()
+                }
+                return false
+                }
+                else
+                {
+                    window.navigator.vibrate(500,1000)
+                    pass.value=""
+                    return false
+                    
+                }
+                return false
+                
+            }
+        </script> 
+ 
+</body></html>
